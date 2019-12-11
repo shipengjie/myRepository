@@ -323,12 +323,12 @@ public class IOToFileUtils {
 		}
 	}
 
+	// "以行为单位读取文件内容，一次读取一整行：
 	public static List<String> readFileByLinesList(String fileName) {
 		File file = new File(fileName);
 		BufferedReader reader = null;
 		List<String> list = new ArrayList<String>();
 		try {
-			System.out.println("以行为单位读取文件内容，一次读取一整行：");
 			reader = new BufferedReader(new FileReader(file));
 			String tempString = null;
 			// int line = 1;

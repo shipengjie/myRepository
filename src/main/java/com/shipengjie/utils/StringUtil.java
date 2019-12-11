@@ -12,6 +12,31 @@ import java.util.regex.Pattern;
 public class StringUtil {
 
 	/**
+	 * 
+	 * <br>
+	 * Description:TODO 需要实现的逻辑：判断手机号码是否为数值，是否长度为11位，开始位必须是1 <br>
+	 * Date:2019年12月9日
+	 * 
+	 * @param src
+	 * @return
+	 */
+
+	public static boolean judgeTelephoneIsOk(String mobile) {
+
+		String regex = "\\-?[1-9]\\d+";
+		boolean b = Pattern.matches(regex, mobile);
+		if (b) {
+			String regexs = "1[34578]\\d{9}$";
+			boolean matches = Pattern.matches(regex, mobile);
+			return matches;
+		} else {
+			return false;
+		}
+	}
+
+	// String replaceAll12 = msg.replaceAll("[\\p{Punct}\\s]+", " ");
+
+	/**
 	 * 过滤空NULL
 	 * 
 	 * @param o
@@ -607,6 +632,11 @@ public class StringUtil {
 		} else {
 			return false;
 		}
+	}
+
+	public static boolean isNumbers(String digit) {
+		String regex = "\\-?[0-9]\\d+";
+		return Pattern.matches(regex, digit);
 	}
 
 	/**
